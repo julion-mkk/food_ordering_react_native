@@ -44,16 +44,16 @@ export default {
         },
         {
             name: 'category',
-            type: 'string',
+            type: 'reference',
             title: 'Reference',
             validation: (rule)=> rule.required(),
-            to: [{type: 'category'}]
+            to: [{type:'category'}]
         },
         {
             name: 'dishes',
             type: 'array',
             title: 'Dishes',
-            to: [{type: 'reference', to: [{type: 'dish'}]}]
+            of: [{type: 'reference', to: [{type: 'dish'}]}]
         }
     ]
 }

@@ -1,5 +1,3 @@
-import {rules} from "@sanity/eslint-config-studio";
-
 export default {
     name: 'category',
     type: 'document',
