@@ -11,7 +11,7 @@ const FeatureRows = ({id, title, description}) => {
     useEffect(()=> {
         console.log('asdf');
         console.log(id);
-        client.fetch(`*[_type == "featured" && _id == '4078b842-b2fa-4177-b611-936012c079b6'] {
+        client.fetch(`*[_type == "featured" && _id == $id] {
           ...,
           restaurants[]-> {
             ...,
@@ -23,7 +23,6 @@ const FeatureRows = ({id, title, description}) => {
           }[0]`, {id: id}).then(data=> {
             setRestaurants(data?.restaurants);
             console.log('sssss');
-            console.log(restaurants[0].image);
         })
     }, []);
 
@@ -50,7 +49,7 @@ const FeatureRows = ({id, title, description}) => {
                         genre ={restaurant.type?.name}
                         address = {restaurant.address}
                         short_description ={restaurant.short_description}
-                        dishes = {[]}
+                        dishes = {restaurant.dishes}
                         lat ={restaurant.lat}
                         long = {restaurant.long}
                     />

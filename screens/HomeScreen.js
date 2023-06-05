@@ -18,7 +18,6 @@ const HomeScreen = ()=> {
     const navigation = useNavigation();
     const [featuredCategories, setFeaturedCategories] = useState([]);
 
-
     useLayoutEffect(()=> {
         navigation.setOptions({
             headerShown: false
@@ -37,6 +36,8 @@ const HomeScreen = ()=> {
             console.log(featuredCategories);
         });
     }, []);
+    console.log('asdfasdd');
+    console.log(featuredCategories);
 
     return (
         <SafeAreaView className="flex-1 pt-4">
