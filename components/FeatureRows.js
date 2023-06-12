@@ -16,9 +16,6 @@ const FeatureRows = ({id, title, description}) => {
           restaurants[]-> {
             ...,
             dishes[]->,
-            type -> {
-              name
-            }
           }
           }[0]`, {id: id}).then(data=> {
             setRestaurants(data?.restaurants);
@@ -46,7 +43,7 @@ const FeatureRows = ({id, title, description}) => {
                         imageUrl ={restaurant.image}
                         title ={restaurant.name}
                         rating ={restaurant.rating}
-                        genre ={restaurant.type?.name}
+                        genre ={restaurant._type}
                         address = {restaurant.address}
                         short_description ={restaurant.short_description}
                         dishes = {restaurant.dishes}
