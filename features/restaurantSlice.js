@@ -19,6 +19,8 @@ export const restaurantSlices = createSlice({
     reducers: {
          setRestaurant: (state, action) => {
              state.restaurant = action.payload;
+             console.log('asdfcc');
+             console.log(state.restaurant);
          }
     },
 })
